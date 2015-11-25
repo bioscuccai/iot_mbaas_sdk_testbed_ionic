@@ -1,0 +1,23 @@
+<ion-view title="Locations">
+  <ion-nav-buttons side="left">
+    <button class="button icon ion-plus" ng-click="newReading()">
+    </button>
+  </ion-nav-buttons>
+	<ion-content>
+    
+    <h2>Recent readings</h2>
+    <ion-list>
+      <ion-item ng-repeat="location in locations">
+        <h2>{{location.lon}} : {{location.lat}}</h2>
+        <p>
+          <i class="icon ion-calendar"></i>
+          {{location.createdAt}}
+        </p>
+        <p>
+          <i class="icon ion-calculator"></i>
+          {{location.sensor}}
+        </p>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

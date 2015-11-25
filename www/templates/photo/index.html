@@ -1,0 +1,22 @@
+<ion-view title="Photo">
+	<ion-content>
+    <div class="card">
+      <div class="item item-divider">New photo</div>
+      <div class="item item-text-wrap">
+        
+      </div>
+    </div>
+    <img src="{{imageData.raw}}" style='max-width: 100%'>
+    <button class="button button-full" ng-click='takePhoto()'>Take photo</button>
+    <button class="button button-full" ng-click='sendPhoto()'>Upload photo</button>
+    
+    <h2>Recent photos</h2>
+    <ion-list>
+      <div class="item item-thumbnail-left" ng-repeat="photo in photos">
+        <img ng-src="{{photo.photoUrl}}" alt="">
+        <h2>{{photo.createdAt}}</h2>
+        <p>{{photo.sensor}}</p>
+      </div>
+    </ion-list>
+  </ion-content>
+</ion-view>

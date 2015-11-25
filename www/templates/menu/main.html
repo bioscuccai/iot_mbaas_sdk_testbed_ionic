@@ -1,0 +1,58 @@
+<ion-list>
+  <div class="item item-divider" ng-show='user.username'>
+    <i class="icon ion-person"></i>
+    {{user.username}}
+  </div>
+  <div class="item item-divider" ng-show='!user.username'>
+    Not logged in
+  </div>
+  
+  <ion-item ui-sref='login()' menu-close ng-show='!user.username'>
+    <i class="icon ion-person"></i>
+    Login
+  </ion-item>
+  <ion-item ui-sref='register()' menu-close ng-show='!user.username'>
+    <i class="icon ion-person-add"></i>
+    Register
+  </ion-item>
+  <ion-item ui-sref='logout()' menu-close ng-show='user.username'>
+    <i class="icon ion-android-exit"></i>
+    Logout
+  </ion-item>
+  
+  <div class="item item-divider"></div>
+  
+  <ion-item ui-sref='temperatures()' menu-close>
+    <i class="icon ion-thermometer"></i>
+    Temperatures
+  </ion-item>
+  <ion-item ui-sref='locations()' menu-close>
+    <i class="icon ion-map"></i>
+    Locations
+  </ion-item>
+  <ion-item ui-sref='photos()' menu-close>
+    <i class="icon ion-camera"></i>
+    Photos
+  </ion-item>
+  <div class="item item-divider">
+    {{temp.degree}} &deg;C
+  </div>
+  <li class="item item-toggle">
+     Upload temperature changes
+     <label class="toggle toggle-assertive">
+       <input type="checkbox" ng-model='temp.autoUpload'>
+       <div class="track">
+         <div class="handle"></div>
+       </div>
+     </label>
+  </li>
+  <li class="item item-toggle">
+     Watch triggers
+     <label class="toggle toggle-assertive">
+       <input type="checkbox" ng-model='trigger.enabled'>
+       <div class="track">
+         <div class="handle"></div>
+       </div>
+     </label>
+  </li>
+</ion-list>
