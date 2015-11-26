@@ -30,3 +30,13 @@ app.controller('TemperaturesCtrl', function($scope, $cordovaToast, $ionicModal, 
     });
   };
 });
+
+app.controller('TemperatureChartCtrl', function($scope, temperatures){
+  $scope.data=[temperatures.map(function(item){
+    return item.degree;
+  })];
+  
+  $scope.labels=_.fill(new Array(temperatures.length), '');
+  $scope.series=['temp'];
+  console.log($scope.data);
+});

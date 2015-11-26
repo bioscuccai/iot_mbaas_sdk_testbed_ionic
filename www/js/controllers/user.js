@@ -1,6 +1,6 @@
 app.controller('LoginCtrl', function($scope, $state, $cordovaToast, UserFactory){
   $scope.user={
-    username: 'aaaa',
+    username: 'aaaa3',
     password: 'aaaaaaaa'
   };
   
@@ -18,9 +18,9 @@ app.controller('LoginCtrl', function($scope, $state, $cordovaToast, UserFactory)
 
 app.controller('RegisterCtrl', function($scope, $state, $cordovaToast, UserFactory){
   $scope.user={
-    username: null,
+    username: 'aaaaa3',
     email: null,
-    password: null
+    password: 'aaaaaaaa'
   };
   
   $scope.register=function(){
@@ -37,7 +37,7 @@ app.controller('RegisterCtrl', function($scope, $state, $cordovaToast, UserFacto
 
 
 app.controller('LogoutCtrl', function($scope, $state, $cordovaToast, UserFactory){
-  Promise.resolve(UserFactory.logout())
+  UserFactory.logout()
   .then(function(res){
     try{
       $cordovaToast.showShortBottom('Logout successfull');

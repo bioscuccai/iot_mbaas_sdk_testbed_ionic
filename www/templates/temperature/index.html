@@ -3,11 +3,15 @@
     <button class="button icon ion-plus" ng-click="newReading()">
     </button>
   </ion-nav-buttons>
+  <ion-nav-buttons side="right">
+    <button class="button icon ion-stats-bars" ui-sref="temperature_chart()">
+    </button>
+  </ion-nav-buttons>
 	<ion-content>    
     <h2>Recent readings</h2>
     <ion-list>
       <ion-item ng-repeat="temperature in temperatures">
-        <h2>{{temperature.degree}} C</h2>
+        <h2>{{temperature.degree}} &deg;C</h2>
         <p>
           <i class="icon ion-calendar"></i>
           {{temperature.createdAt}}

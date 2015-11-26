@@ -197,6 +197,8 @@ app.factory('TriggerFactory', function($interval, $rootScope, GlobalSettings){
         seenBy.push(GlobalSettings.device.id);
         item.set('seenBy', seenBy);
         item.save();
+        console.log("sending:");
+        console.log(item.get('message'));
         $rootScope.$broadcast('trigger:message', item.get('message'));
       });
     });

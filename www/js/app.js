@@ -171,6 +171,7 @@ app.run(function($rootScope,$ionicPlatform, $ionicHistory){
 
 app.run(function(TempMockupFactory, TriggerFactory){
   Parse.initialize(credentials.parse.id, credentials.parse.token);
+  Kii.initialize(credentials.kii.id, credentials.kii.key, KiiSite.US);
   TempMockupFactory.start();
   TriggerFactory.start();
 });

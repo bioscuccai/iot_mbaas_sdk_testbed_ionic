@@ -17,6 +17,7 @@
     -->
 
     <script src="lib/parse/parse-1.6.7.min.js"></script>
+    <script src="lib/kii/html5-cloud-sdk-v2.3.0.js"></script>
 
     <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
@@ -38,16 +39,17 @@
     
     <script src="js/controllers/user.js"></script>
     <script src="js/controllers/menu.js"></script>
+    <script src="js/controllers/main.js"></script>
     <script src="js/controllers/temperature.js"></script>
     <script src="js/controllers/location.js"></script>
     <script src="js/controllers/photo.js"></script>
     
     <script src="js/services_common.js"></script>
-    <script src="js/services_parse.js"></script>
+    <script src="js/services_kii.js"></script>
     
     
   </head>
-  <body ng-app="starter">
+  <body ng-app="starter" ng-controller='MainCtrl'>
 
     <ion-side-menus  enable-menu-with-back-views="1" >
 

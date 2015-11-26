@@ -17,6 +17,11 @@ app.controller('LocationsCtrl', function($scope, $cordovaToast, $cordovaGeolocat
     $ionicModal.fromTemplateUrl('modals/location/new.html', {scope: $scope})
     .then(function(modal){
       modal.show();
+      return $cordovaGeolocation.getCurrentPosition({timeout: 3000});
+    })
+    .then(function(pos){
+      $scope.location.lon=pos.coords.longitude;
+      $scope.location.lat=pos.coords.latitude;
     });
   };
   
