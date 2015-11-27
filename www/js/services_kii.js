@@ -88,6 +88,7 @@ app.factory("TemperatureFactory", function($q, GlobalSettings){
     var temperature=temperatureBucket.createObject();
     temperature.set('degree', degree);
     temperature.set('sensor', GlobalSettings.device.id);
+    temperature.set('checked', false);
     return temperature.save();
   };
   
@@ -220,11 +221,13 @@ app.factory('TriggerFactory', function($interval, $rootScope, GlobalSettings){
   
   var handler=function(){
     if(!GlobalSettings.trigger.enabled) return;
-    var TriggerPool=Parse.Object.extend('TriggerPool');
-    var query=new Parse.Query(TriggerPool);
-    query.notEqualTo('seenBy', GlobalSettings.device.id);
-    query.find()
-    .then(function(results){
+    var bucket = Kii.bucketWithName("TriggerPool");
+    var query = KiiQuery.queryWithClause();
+    query.setLimit(lim||100);
+    query.sortByDesc('_created');
+    bucket.executeQuery(query)
+    .then(function(resultsArr){
+      var results=resultsArr[1];
       console.log(results);
       results.forEach(function(item){
         var seenBy=item.get('seenBy');
