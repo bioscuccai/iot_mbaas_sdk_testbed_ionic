@@ -9,6 +9,7 @@
     "angular-filter": "~0.5.8",
     "ngCordova": "~0.1.23-alpha",
     "angular-chart.js": "~0.8.6",
-    "bluebird": "~3.0.5"
+    "bluebird": "~3.0.5",
+    "angular-socket-io": "~0.7.0"
   }
 }

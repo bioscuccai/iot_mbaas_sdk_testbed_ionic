@@ -37,3 +37,8 @@ app.factory('TempMockupFactory', function(TemperatureFactory, $interval, GlobalS
     stop: stop
   };
 });
+
+app.factory('WsFactory', function(socketFactory){
+  var ioSocket = io.connect('ws://localhost:5678');
+  return socketFactory({ioSocket: ioSocket});
+});
